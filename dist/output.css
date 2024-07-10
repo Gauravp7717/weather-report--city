@@ -554,12 +554,81 @@ video {
   --tw-contain-style:  ;
 }
 
-.m-0 {
-  margin: 0px;
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.box-border {
-  box-sizing: border-box;
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mr-16 {
+  margin-right: 16px;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-60 {
+  height: 60px;
+}
+
+.w-16 {
+  width: 16px;
+}
+
+.w-60 {
+  width: 60px;
+}
+
+.w-9\/12 {
+  width: 75%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-470 {
+  max-width: 470px;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.rounded-20 {
+  border-radius: 20px;
+}
+
+.rounded-30 {
+  border-radius: 30px;
+}
+
+.rounded-50 {
+  border-radius: 50px;
+}
+
+.border-0 {
+  border-width: 0px;
 }
 
 .bg-\[\#222\] {
@@ -567,12 +636,53 @@ video {
   background-color: rgb(34 34 34 / var(--tw-bg-opacity));
 }
 
-.p-0 {
-  padding: 0px;
+.bg-cbg {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 255 252 / var(--tw-bg-opacity));
 }
 
-.font-sans {
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.pb-10 {
+  padding-bottom: 10px;
+}
+
+.pl-25 {
+  padding-left: 25px;
+}
+
+.pr-25 {
+  padding-right: 25px;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-18 {
+  font-size: 18px;
+}
+
+.text-\[\#555\] {
+  --tw-text-opacity: 1;
+  color: rgb(85 85 85 / var(--tw-text-opacity));
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 *{
@@ -580,4 +690,12 @@ video {
   padding: 0;
   font-family: sans-serif;
   box-sizing: border-box;
+}
+
+.custom-gradient {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  --tw-gradient-from: #00feba var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 254 186 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #5b584a var(--tw-gradient-to-position);
 }
