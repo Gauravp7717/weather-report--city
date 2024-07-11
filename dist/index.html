@@ -6,31 +6,31 @@
     <title>wether report - city</title>
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="bg-[#222]">
+<body class="bg-[#222] h-screen">
 
-    <div class="w-9/12 max-w-470 custom-gradient text-white mt-100 mx-auto mb-0 rounded-20 text-center  ">
+    <div class="w-9/12 max-w-470 custom-gradient text-white mt-100 mx-auto mb-0 rounded-20 py-40 px-35 text-center">
 
-        <div class="w-full flex items-center justify-between pt-40 pb-40 pl-35 pr-35 text-center">
-            <input class="border-0 outline-none bg-cbg text-[#555] pt-10 pb-10 pl-25 pr-25 h-16 rounded-30 flex-1 mr-16 text-18 text-center" type="text" placeholder="enter the city name here" spellcheck="false">
+        <div class="search w-full flex items-center justify-between text-center">
+            <input class="border-0 outline-none bg-cbg text-[#555] pt-10 pb-10 pl-25 pr-25 h-60 rounded-30 flex-1 mr-16 text-18 text-center" type="text" placeholder="enter the city name here" spellcheck="false">
             <button class="border-0 outline-none bg-cbg rounded-50 w-60 h-60 cursor-pointer"><img class="w-16 m-5" src="/images/search.png"></button>
         </div>
 
-        <div class="pb-5">
-            <img class="w-44 mt-8 " src="/images/rain.png" >
-            <h1 class="text-[80px] font-medium">22*c</h1>
-            <h2 class="text-[45px] font-[400] mt-[-10px]">Jalgaon</h2>
+        <div>
+            <img class="icon max-w-170" src="/images/rain.png" >
+            <h1 class="temp text-[80px] font-medium">22°C</h1>
+            <h2  class="city text-[45px] font-[400] mt-[-10px]">Jalgaon</h2>
             <div id="details" class="flex items-center justify-between pt-0 pb-0 px-5">
                 <div id="col" class="flex items-center text-left">
                     <img class="w-10 mr-2.5 " src="/images/humidity.png">
                     <div>
-                        <p>50%</p>
+                        <p class="humidity" >50 %</p>
                         <p class="text-[28px] mt-[-6px]">humidity</p>
                     </div>
                 </div>
                 <div id="col2"  class="flex items-center text-left">
                     <img  class="w-10 mr-2.5 " src="/images/wind.png">
                     <div>
-                        <p>55 km/hr</p>
+                        <p class="wind">55 km/hr</p>
                         <p class="text-[28px] mt-[-6px]">wind</p>
                     </div>
                 </div>
@@ -38,6 +38,56 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+
+        const apikey ="9728ac60d9d65785a4cd87aaaa6a5bba";
+        const apiurl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+
+        const searchBox = document.querySelector(".search input");
+        const searchBtn = document.querySelector(".search button");
+        const icon = document.querySelector(".icon");
+
+        async function checkWeather(city){
+            const response = await fetch(apiurl + city + `&appid=${apikey}`);
+            var data = await response.json();
+
+            console.log(data);
+
+            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".temp").innerHTML = data.main.temp+ "°C"; 
+            document.querySelector(".humidity").innerHTML = data.main.humidity + " %";
+            document.querySelector(".wind").innerHTML = data.wind.speed + " Km/hr";
+
+
+            if(data.weather[0].main == "Clouds"){
+                icon.src = "/images/clouds.png"
+            }else if(data.weather[0].main == "Clear"){
+                 icon.src = "/images/clear.png"
+            }
+            else if(data.weather[0].main == "Rain"){
+                 icon.src = "/images/rain.png"
+            }
+            else if(data.weather[0].main == "Drizzle"){
+                 icon.src = "/images/drizzel.png"
+            }
+            else if(data.weather[0].main == "Mist"){
+                 icon.src = "/images/mist.png"
+            }
+
+        }
+
+        searchBtn.addEventListener("click", ()=>{
+            checkWeather(searchBox.value);
+        })
+
+
+      
+
+
+
+    </script>
     
 </body> 
 </html>

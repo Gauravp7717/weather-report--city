@@ -3,8 +3,11 @@ module.exports = {
   content: ["./dist/**/*.{html,js}"],
   theme: {
     extend: {
+     
       maxWidth:{
         '470': '470px',
+        '170': '170px',
+        '500': '500px',
       },
       fontSize: {
         '18': '18px',
