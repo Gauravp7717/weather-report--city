@@ -18,6 +18,8 @@ module.exports = {
       padding: {
         '10': '10px',
         '25': '25px',
+        '40': '40px',
+        '35': '35px',
       },
       colors: {
         cbg: '#ebfffc',

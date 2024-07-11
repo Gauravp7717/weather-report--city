@@ -8,17 +8,34 @@
 </head>
 <body class="bg-[#222]">
 
-    <div class="w-9/12 max-w-470 custom-gradient text-white mt-100 mx-auto mb-0 rounded-20 text-center">
+    <div class="w-9/12 max-w-470 custom-gradient text-white mt-100 mx-auto mb-0 rounded-20 text-center  ">
 
-        <div class="w-full flex items-center justify-between pt-10 pb-10 pl-25 pr-25 text-center">
-            <input class="border-0 outline-none bg-cbg text-[#555]  h-60 rounded-30 flex-1 mr-16 text-18 flex items-center" type="text" placeholder="enter the city name here" spellcheck="false">
-            <button class="border-0 outline-none bg-cbg rounded-50 w-60 h-60 cursor-pointer"><img src="/images/search.png" class="w-16 flex items-center"></button>
+        <div class="w-full flex items-center justify-between pt-40 pb-40 pl-35 pr-35 text-center">
+            <input class="border-0 outline-none bg-cbg text-[#555] pt-10 pb-10 pl-25 pr-25 h-16 rounded-30 flex-1 mr-16 text-18 text-center" type="text" placeholder="enter the city name here" spellcheck="false">
+            <button class="border-0 outline-none bg-cbg rounded-50 w-60 h-60 cursor-pointer"><img class="w-16 m-5" src="/images/search.png"></button>
         </div>
 
-        <div>
-            <img src="/images/rain.png" >
-            <h1>22*c</h1>
-            <h2>Jalgaon</h2>
+        <div class="pb-5">
+            <img class="w-44 mt-8 " src="/images/rain.png" >
+            <h1 class="text-[80px] font-medium">22*c</h1>
+            <h2 class="text-[45px] font-[400] mt-[-10px]">Jalgaon</h2>
+            <div id="details" class="flex items-center justify-between pt-0 pb-0 px-5">
+                <div id="col" class="flex items-center text-left">
+                    <img class="w-10 mr-2.5 " src="/images/humidity.png">
+                    <div>
+                        <p>50%</p>
+                        <p class="text-[28px] mt-[-6px]">humidity</p>
+                    </div>
+                </div>
+                <div id="col2"  class="flex items-center text-left">
+                    <img  class="w-10 mr-2.5 " src="/images/wind.png">
+                    <div>
+                        <p>55 km/hr</p>
+                        <p class="text-[28px] mt-[-6px]">wind</p>
+                    </div>
+                </div>
+               
+            </div>
         </div>
     </div>
     
